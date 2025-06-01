@@ -26,7 +26,7 @@ async def command_start_handler(message: Message) -> None:
 @dp.message()
 async def echo(message: Message) -> None:
     response = await generate_response(message.text, AI_TOKEN)
-    await message.answer(f"{response}", parse_mode=ParseMode.MARKDOWN)
+    await message.answer(f"{response}", parse_mode="Markdown")
 
 
 # Run the bot
