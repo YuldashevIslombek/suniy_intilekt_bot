@@ -21,7 +21,7 @@ dp = Dispatcher()
 # Command handler
 @dp.message(Command("start"))
 async def command_start_handler(message: Message) -> None:
-    await message.answer("privet")
+        await message.answer("Assalomu alaykum! Botga xush kelibsiz. Sizga qanday yordam bera olaman!")
 
 @dp.message()
 async def echo(message: Message) -> None:
