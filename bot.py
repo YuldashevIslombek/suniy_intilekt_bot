@@ -2,6 +2,8 @@ import asyncio
 import logging
 from http.client import responses
 from os import getenv
+
+from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
@@ -24,7 +26,7 @@ async def command_start_handler(message: Message) -> None:
 @dp.message()
 async def echo(message: Message) -> None:
     response = await generate_response(message.text, AI_TOKEN)
-    await message.answer(f"{response}", html=True)
+    await message.answer(f"{response}", parse_mode=ParseMode.HTML)
 
 
 # Run the bot
